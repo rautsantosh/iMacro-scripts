@@ -1,0 +1,1111 @@
+SET !ERRORIGNORE YES
+SET !TIMEOUT_PAGE 5
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/1/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+WAIT SECONDS=1
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=3
+'TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+'--------------------------------------------------------------- Start 2nd Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/2/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+'------------------------------------------------------- Start 3rd Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/3/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+'-------------------------------------------------------- Start 4th Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/4/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+
+'--------------------------------------------- Start 5th Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/5/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+
+'--------------------------------------- Start 6th Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/6/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+
+'-------------------------------------------- Start 7th Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/7/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+
+'------------------------------------------------------- Start 8th Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/8/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+
+'--------------------------------------------- Start 9th Seed
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/9/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+'TAG XPATH="//a[contains(text(),'Hi')]"
+WAIT SECONDS=1
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+WAIT SECONDS=2
+TAB T=1
+WAIT SECONDS=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=2

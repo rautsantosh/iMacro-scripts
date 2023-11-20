@@ -1,0 +1,4 @@
+﻿VERSION BUILD=8970419 RECORDER=FX
+TAG XPATH="(.//*[contains(@title,'Mark as')])[1]"
+WAIT SECONDS=1.5
+PAUSE

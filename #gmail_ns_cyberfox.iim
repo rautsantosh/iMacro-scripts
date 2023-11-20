@@ -1,0 +1,47 @@
+﻿VERSION BUILD=1005 RECORDER=CR
+SET !ERRORIGNORE YES
+URL GOTO=https://mail.google.com/mail/u/0/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+'TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]/td[2]"
+'TAG XPATH="(//div[@role='main']//tr[@role='row'])[6]/td[2]"
+WAIT SECONDS=1
+CLICK X=501 Y=90
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+TAG XPATH="//*[@aria-label='Search mail' and @type]" CONTENT="label:unread"
+WAIT SECONDS=1
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]"
+TAG XPATH="//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+CLICK X=278 Y=87
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+CLICK X=278 Y=87
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+CLICK X=278 Y=87 
+
+
+'TAG XPATH="//div[text()='Not spam']//ancestor::div[@role='button']"
+'EVENT TYPE=MOUSEUP POINT="(504,92)"
+'EVENT TYPE=CLICK SELECTOR="HTML>BODY>DIV:nth-of-type(7)>DIV:nth-of-type(3)>DIV>DIV:nth-of-type(2)>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV>DIV:nth-of-type(2)>DIV>DIV>DIV>DIV>DIV:nth-of-type(3)>DIV>DIV" BUTTON=0 'Not junk btn

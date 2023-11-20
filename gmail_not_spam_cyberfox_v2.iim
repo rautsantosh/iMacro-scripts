@@ -1,0 +1,64 @@
+﻿VERSION BUILD=1005 RECORDER=CR
+SET !ERRORIGNORE YES
+URL GOTO=https://mail.google.com/mail/u/0/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+'TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[1]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[2]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[3]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[4]/td[2]"
+TAG XPATH="(//div[@role='main']//tr[@role='row'])[5]/td[2]"
+'TAG XPATH="(//div[@role='main']//tr[@role='row'])[6]/td[2]"
+WAIT SECONDS=1
+CLICK X=501 Y=90
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+
+TAG XPATH="//*[@aria-label='Search mail' and @type]" CONTENT="label:unread acer"
+EVENTS TYPE=KEYPRESS XPATH="//*[@aria-label='Search mail' and @type]" KEYS="[37,13]"
+WAIT SECONDS=3
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+CLICK X=718 Y=87
+CLICK X=801 Y=152
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Reply' and @tabindex='0']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+SET text "HI admin, you hope you doing well thanks for contacting me i really was a wonderful day in your office i hope we can talk again Reynolds"
+EVENTS TYPE=KEYPRESS SELECTOR="div[aria-label='Message Body']" CHARS={{text}}
+TAG XPATH="//div[text()='Send']"
+WAIT SECONDS=2
+CLICK X=278 Y=87
+WAIT SECONDS=1
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+WAIT SECONDS=1
+CLICK X=718 Y=87
+CLICK X=801 Y=152
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Reply' and @tabindex='0']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+SET text "HI admin, you hope you doing well thanks for contacting me i really was a wonderful day in your office i hope we can talk again Reynolds"
+EVENTS TYPE=KEYPRESS SELECTOR="div[aria-label='Message Body']" CHARS={{text}}
+TAG XPATH="//div[text()='Send']"
+'TAG XPATH="//div[@aria-label='Send ?(Ctrl-Enter)?']"
+WAIT SECONDS=2
+CLICK X=278 Y=87
+WAIT SECONDS=2

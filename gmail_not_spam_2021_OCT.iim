@@ -1,0 +1,105 @@
+SET !ERRORIGNORE YES
+'SET !TIMEOUT_STEP 5
+SET !TIMEOUT_PAGE 5
+TAB T=1
+TAB CLOSEALLOTHERS
+WAIT SECONDS=1
+'process spam folder
+URL GOTO=https://mail.google.com/mail/u/0/
+WAIT SECONDS=5
+TAG XPATH="//*[text()='More']//ancestor::span[@role='button']"
+TAG XPATH="//a[text()='Spam']"
+WAIT SECONDS=2
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG POS=1 TYPE=BUTTON ATTR=TXT:*not<SP>spam
+WAIT SECONDS=1
+
+'Process inbox folder
+TAG XPATH="//a[text()='Inbox']"
+WAIT SECONDS=1
+TAG XPATH="//*[@aria-label='Dismiss']"
+'TAG POS=1 TYPE=INPUT:TEXT FORM=ID:aso_search_form_anchor ATTR=NAME:q CONTENT=label:unread
+'EVENT TYPE=KEYPRESS SELECTOR="INPUT[name='q']" KEY=13
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+WAIT SECONDS=1
+TAG XPATH="//div[@aria-label='Not starred']"
+'TAG XPATH="//a[contains(text(),'Hi')]"
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+'TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//div[@aria-label='Reply']"
+'SET text "Hello"
+'EVENTS TYPE=KEYPRESS SELECTOR="div[aria-label='Message Body']" CHARS={{text}}
+TAG XPATH="//a[text()='Inbox']"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//div[@aria-label='Not starred']"
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+TAG XPATH="//a[text()='Inbox']"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//div[@aria-label='Not starred']"
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+TAG XPATH="//a[text()='Inbox']"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//div[@aria-label='Not starred']"
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+TAG XPATH="//a[text()='Inbox']"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//div[@aria-label='Not starred']"
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+TAG XPATH="//a[text()='Inbox']"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//div[@aria-label='Not starred']"
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+TAG XPATH="//a[text()='Inbox']"
+
+WAIT SECONDS=1
+TAG XPATH="(//div[@role='main']//tr[@role='row']//*[@data-tooltip='Mark as read']/ancestor::tr[1])[1]"
+TAG XPATH="//div[@aria-label='Not starred']"
+TAG XPATH="//div[@id=':1']//div[@role='listitem' and @tabindex]//a[contains(text(),'Hi')]"
+TAB T=1
+TAB CLOSEALLOTHERS
+TAG XPATH="//a[text()='Inbox']"
